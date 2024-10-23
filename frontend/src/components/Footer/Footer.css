@@ -1,0 +1,60 @@
+#footer-container {
+    background: linear-gradient(181deg, #2C8851 50%, #1C5533 100%);
+}
+
+#copyright {
+    background-color: #002E2A;
+}
+
+.linkHover {
+    transition: all 0.4s;
+}
+
+.linkHover:hover {
+    opacity: 0.8;
+}
+
+.linkHover:active {
+    opacity: 0.5;
+}
+
+.customLineText {
+    position: relative;
+}
+
+
+.customLineLinks {
+    position: relative;
+}
+
+.customLineText::after {
+    content: "";
+    width: 80%; /* Tamanho da linha */
+    height: 3px; /* Espessura da linha */
+    background-color: #1C5533; /* Cor da linha */
+    margin: 3px auto auto;
+    display: block;
+}
+
+.customLineLinks::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; /* Ajuste a distância da linha para o texto */
+    left: 0;
+    width: 70%; /* Tamanho da linha */
+    height: 3px; /* Espessura da linha */
+    background-color: #1C5533; /* Cor da linha */
+}
+
+
+@media (max-width: 767px) {
+    .customLineLinks::after {
+        content: "";
+        position: absolute;
+        bottom: -8px; /* Ajuste a distância da linha para o texto */
+        left: 0;
+        width: 100%; /* Tamanho da linha */
+        height: 3px; /* Espessura da linha */
+        background-color: #1C5533; /* Cor da linha */
+    }
+}

@@ -1,0 +1,7 @@
+.btnCustom {
+    transition: all 0.4s;
+}
+
+.btnCustom:active {
+    opacity: 0.6;
+}

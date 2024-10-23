@@ -1,0 +1,51 @@
+#headerContainerTop {
+    background-color: #2c885175;
+    padding: 1.5rem;
+    transition: all 0.2s;
+}
+
+#headerContainerFixed {
+    background-color: #2c8851;
+    padding: 0.6rem;
+    transition: all 0.2s;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 237px;
+    height: 40px;
+    background-color: #2BAC3E;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+#btnPartnership {
+    background-color: #65D6A1;
+    padding: 8px 25px;
+    border-radius: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+#btnPartnership:active {
+    opacity: 0.7;
+}
+
+.lineHover::after {
+    content: " ";
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #65D6A1;
+    margin: 3px auto auto;
+    display: block;
+    transition: 0.3s;
+}
+
+.lineHover:hover::after {
+    width: 70%;
+}

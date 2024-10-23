@@ -1,0 +1,12 @@
+#termsCheck {
+    background-color: #00000000;
+}
+
+#termsCheck:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

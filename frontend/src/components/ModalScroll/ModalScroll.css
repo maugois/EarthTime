@@ -1,0 +1,7 @@
+.modalScrollCustom {
+    background-color: #065425;
+}
+
+.customScrollClose .btn-close {
+    filter: invert(1); /* Muda a cor para branco */
+}

@@ -1,0 +1,12 @@
+.labelTitle {
+    width: 40%;
+    border-radius: 20px;
+}
+
+.labelTitle h1 {
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0px;
+}

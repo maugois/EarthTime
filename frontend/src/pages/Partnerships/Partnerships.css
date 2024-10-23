@@ -1,0 +1,43 @@
+#cardForm {
+    background-color: #03682B;
+    width: 70%;
+}
+
+#cardOptionsContainer {
+    width: 30%;
+}
+
+#cardOptions a {
+    padding: 1rem;
+    background-color: #2C8851 !important;
+    border-color: #ffffff00;
+    box-shadow: 3px 0 0.25rem rgba(0, 255, 102, 0.11);
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+#cardOptions a:hover {
+    color: #ffffffd0;
+}
+
+#optionPartnerships {
+    border-bottom: solid 1px #ffffff !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+@media (max-width: 767px) {
+    #containerPartnerships {
+        flex-direction: column;
+    }
+
+    #cardForm {
+        width: 100%;
+    }
+    
+    #cardOptionsContainer {
+        width: 100%;
+    }
+}

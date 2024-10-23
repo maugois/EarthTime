@@ -1,0 +1,12 @@
+.cardVerticalCustom {
+    background-color: #2F847D;
+    /* #00428D */
+    color: white;
+    border-color: #5c5c5c !important;
+}
+
+.cardVerticalCustom img {
+    width: 100%;
+    height: 200px; /* Definindo a altura para que todas fiquem iguais */
+    object-fit: cover; /* Faz com que a imagem preencha o espaço definido, cortando se necessário */
+}

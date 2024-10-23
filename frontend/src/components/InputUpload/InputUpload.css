@@ -1,0 +1,29 @@
+.inputUpload {
+    border-right: unset;
+    border-color: #000;
+    background-color: #55976f !important;
+    color: #fff;
+}
+
+.inputUpload {
+    background-color: #2C8851;
+    color: white;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border-right: none;
+    border: #000 1px dashed;
+}
+
+.inputUpload:hover {
+    border: solid 1px;
+    border-color: #0edb5d;
+    box-shadow: 3px 0 0.25rem rgb(0 255 102 / 25%);
+}
+
+.inputUploadCustom {
+    background-color: #b5c2b7;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}

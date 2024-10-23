@@ -1,0 +1,48 @@
+.firstColumn {
+    background-color: #25502A;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.secondColumn {
+    background-color: #2C8851;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cardMainMobile {
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .cardMobile {
+        width: 100% !important;
+    }
+
+    .firstColumn {
+        border-top-left-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .secondColumn {
+        border-top-right-radius: 0rem;
+        border-bottom-right-radius: 0rem;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .cardMainMobile {
+        flex-direction: column;
+        width: 100% !important;
+        height: 100%     !important;
+    }
+
+    .cardMobile {
+        width: 100% !important;
+    }
+}

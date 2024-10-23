@@ -1,0 +1,50 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+    #mainAbout {
+        flex-direction: column;
+    }
+
+    #sectionInfo {
+        width: 100% !important;
+    }
+
+    #sectionInfo div {
+        align-items: center;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #sectionCards {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #mainAbout {
+        flex-direction: column;
+    }
+    
+    #sectionInfo {
+        width: 100% !important;
+    }
+
+    #sectionInfo div {
+        align-items: center;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #sectionCards {
+        width: 100% !important;
+        flex-direction: column;
+        margin-top: 50px;
+        gap: 0px !important;
+    }
+
+    .groupCards {
+        margin-top: 0px !important;
+    }
+
+    #cardValues {
+        margin-top: 0px !important;
+    }
+}

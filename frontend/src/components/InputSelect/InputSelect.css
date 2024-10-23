@@ -1,0 +1,45 @@
+.selectCustom {
+    border-left: unset;
+    border-color: #000;
+    background-color: #55976f;
+    color: #fff;
+}
+
+.selectCustom:focus {
+    background-color: #55976f;
+    border-left: unset;
+    border-color: #0edb5d;
+    box-shadow: 3px 0 0.25rem rgb(0 255 102 / 25%);
+    color: #fff;
+}
+
+.labelCustom {
+    width: 100%;
+}
+
+.selectCustom + .labelCustom {
+    color: #ffffffa6 !important;
+}
+
+.selectCustom:focus + .labelCustom {
+    color: #ffffffa6 !important;
+}
+
+.selectCustom:focus + .labelCustom::after {
+    background-color: #55976f !important;
+}
+
+.selectCustom + .labelCustom::after {
+    background-color: #55976f !important;
+}
+
+.iconLabel {
+    background-color: #55976f;
+    border-color: #000;
+    border-right: unset;
+}
+
+.focused {
+    border-color: rgb(14, 219, 93);
+    box-shadow: 0 0 0.25rem rgba(0, 255, 102, 0.25);
+}

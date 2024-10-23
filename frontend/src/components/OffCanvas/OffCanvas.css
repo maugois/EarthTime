@@ -1,0 +1,7 @@
+#OffCanvas {
+    background-color: #2c8851;
+}
+
+.customClose .btn-close {
+    filter: invert(1); /* Muda a cor para branco */
+}
