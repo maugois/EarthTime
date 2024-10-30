@@ -8,11 +8,11 @@ export default function InputGeneral(props) {
 
     return (
         <>
-            <div class="input-group mb-4">
-                <span class={`iconLabel input-group-text ${isFocused ? 'focused' : ''}`}>{props.iconLabel}</span>
-                <div class="form-floating">
-                    <InputMask type={props.typeInput} mask={props.maskInput} class="inputCustom form-control" id={props.idInput} placeholder={props.placeholder} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} required={props.isRequired} />
-                    <label className="labelCustom" for={props.idInput}>{props.placeholder}</label>
+            <div className="input-group mb-4">
+                <span className={`iconLabel input-group-text ${isFocused ? 'focused' : ''}`}>{props.iconLabel}</span>
+                <div className="form-floating">
+                    <InputMask type={props.typeInput} mask={props.maskInput} className="inputCustom form-control" id={props.idInput} placeholder={props.placeholder} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} required={props.isRequired} />
+                    <label className="labelCustom" htmlFor={props.idInput}>{props.placeholder}</label>
                 </div>
             </div>
         </>

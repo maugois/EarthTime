@@ -19,10 +19,10 @@ export default function InputUpload(props) {
 
     return (
         <>
-            <input class="d-none" type="file" id={props.idUpload} required={props.isRequired} onChange={handleFileChange} />
+            <input className="d-none" type="file" id={props.idUpload} required={props.isRequired} onChange={handleFileChange} />
 
             <div className="input-group input-group-lg mb-4">
-                <label for={props.idUpload} className="form-control form-control-lg inputUpload d-flex flex-column justify-content-center align-items-center cursor-pointer">
+                <label htmlFor={props.idUpload} className="form-control form-control-lg inputUpload d-flex flex-column justify-content-center align-items-center cursor-pointer">
                     {!fileSelected ? (
                         <>
                             <FontAwesomeIcon icon={faCloudArrowUp} size="2x" className="me-2 text-black" />
@@ -34,7 +34,7 @@ export default function InputUpload(props) {
                 </label>
 
 
-                <label for={props.idUpload} className="input-group-text inputUploadCustom btn btn-secondary fs-4 d-flex justify-content-center align-items-center">
+                <label htmlFor={props.idUpload} className="input-group-text inputUploadCustom btn btn-secondary fs-4 d-flex justify-content-center align-items-center">
                     <FontAwesomeIcon icon={faArrowUp} className="text-black" />
                 </label>
             </div>

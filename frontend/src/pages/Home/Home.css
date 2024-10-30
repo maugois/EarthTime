@@ -1,0 +1,106 @@
+#sectionMain {
+    height: 65vh;
+}
+
+#sectionFiveR {
+    background-color: #2C8851;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#btnJoin {
+    background-color: #65D6A1;
+    color: #000;
+    width: 70%;
+    padding: 15px 35px;
+    border-radius: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+#btnJoin:active {
+    opacity: 0.7;
+}
+
+#impactTextLine {
+    border-bottom: solid 4px #0edb5d !important;
+}
+
+#sectionMainContent {
+    width: 40%;
+}
+
+#sectionMainClock {
+    width: 60%;
+}
+
+.lineTitleBgGreen {
+    border: 1px solid #033014;          
+    height: 4px;          
+    background-color: #033014;  
+    width: 20%;            
+    margin: 20px auto;
+    opacity: 1;
+}
+
+.lineTitleBgDark {
+    border: 1px solid #0edb5d;          
+    height: 4px;          
+    background-color: #0edb5d;
+    width: 15%;            
+    margin: 20px auto;
+    opacity: 1;
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #sectionJoinContent {
+        flex-direction: column;
+    }
+    
+    #sectionJoinContent div {
+        width: 100% !important;
+    }
+
+    #sectionMain {
+        flex-direction: column;
+    }
+    
+    #sectionMainContent {
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    #sectionMainClock {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #sectionJoinContent {
+        flex-direction: column;
+    }
+    
+    #sectionJoinContent div {
+        width: 100% !important;
+    }
+
+    #sectionMain {
+        flex-direction: column;
+    }
+
+    #sectionMainContent {
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    #sectionMainClock {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 685px) {
+    #sectionMain {
+        height: 90vh;
+    }
+}

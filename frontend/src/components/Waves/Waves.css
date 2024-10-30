@@ -1,7 +1,3 @@
-.waveContainer {
-    margin-top: 18rem;
-}
-
 .waves {
   position:relative;
   width: 100%;
@@ -12,6 +8,7 @@
 
 .waveContent {
     background-color: #2C8851;
+    padding-top: 3rem;
 }
 
 /* Animation */

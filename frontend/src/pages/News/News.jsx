@@ -4,8 +4,8 @@ import App from '../../layouts/App.jsx'
 import LabelTitle from '../../components/LabelTitle/LabelTitle.jsx'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SliderCardHorizontal from './SliderCardHorizontal/SliderCardHorizontal.jsx'
-import SliderCardVertical from './SliderCardVertical/SliderCardVertical.jsx'
+import SliderCardHorizontalNews from './SliderCardHorizontalNews/SliderCardHorizontalNews.jsx'
+import SliderCardVerticalNews from './SliderCardVerticalNews/SliderCardVerticalNews.jsx'
 import ModalLarge from '../../components/ModalLarge/ModalLarge.jsx';
 import FormatDate from "../../components/FormatDate/FormatDate.jsx";
 import image from '../../assets/images/wave.png';
@@ -53,13 +53,13 @@ export default function News() {
                    <article className='d-flex flex-column align-items-center text-white mb-5'>
                         <LabelTitle bgColor="#dc35456e">Recentes</LabelTitle>
                         <div className='w-100'>
-                            <SliderCardHorizontal handleOpenModal={handleOpenModal} />
+                            <SliderCardHorizontalNews handleOpenModal={handleOpenModal} />
                         </div>
                    </article>
                    <article className='d-flex flex-column align-items-center text-white mb-5'>
                         <LabelTitle bgColor="#dc35456e">Geral</LabelTitle>
                         <div className='w-100'>
-                            <SliderCardVertical handleOpenModal={handleOpenModal} />
+                            <SliderCardVerticalNews handleOpenModal={handleOpenModal} />
                         </div>
                    </article>
                 </div>

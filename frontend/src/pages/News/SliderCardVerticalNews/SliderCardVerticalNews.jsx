@@ -1,10 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
-import CardVertical from '../../../components/CardVertical/CardVertical.jsx'
+import CardVerticalNews from '../../../components/CardVerticalNews/CardVerticalNews.jsx'
 import FormatDate from '../../../components/FormatDate/FormatDate.jsx'
 import fetchNews from '../../../services/api/fetchNews.jsx'
 
-export default function SliderCardVertical( { handleOpenModal } ) {
+export default function SliderCardVerticalNews( { handleOpenModal } ) {
     const settings = {
         lazyLoad: true,
         infinite: false,
@@ -33,9 +33,9 @@ export default function SliderCardVertical( { handleOpenModal } ) {
     if (loading) {
         return (
             <>
-                <div class="d-flex justify-content-center my-5">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                <div className="d-flex justify-content-center my-5">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </>
@@ -46,7 +46,8 @@ export default function SliderCardVertical( { handleOpenModal } ) {
         <>
             <Slider {...settings}>
                 { articles.map((article, index) => (
-                    <CardVertical 
+                    <CardVerticalNews 
+                        key={index}
                         idModalOpen='modalLargeNews' 
                         title={article.title} 
                         author={article.author} 
@@ -56,7 +57,7 @@ export default function SliderCardVertical( { handleOpenModal } ) {
                         handleClick={() => handleOpenModal(article)}
                     >
                         {article.description.substring(0, maxLength) + "..."}
-                    </CardVertical>
+                    </CardVerticalNews>
                 )) }
             </Slider>
         </>

@@ -1,6 +1,9 @@
+#cardFormContainer {
+    width: 70%;
+}
+
 #cardForm {
     background-color: #03682B;
-    width: 70%;
 }
 
 #cardOptionsContainer {
@@ -24,8 +27,9 @@
     border-bottom: solid 1px #ffffff !important;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-
+.cardCustomObservation {
+    background-color: #2C8851 !important;
+    box-shadow: 3px 0 0.25rem rgba(0, 255, 102, 0.11);
 }
 
 @media (max-width: 767px) {
@@ -33,7 +37,7 @@
         flex-direction: column;
     }
 
-    #cardForm {
+    #cardFormContainer {
         width: 100%;
     }
     

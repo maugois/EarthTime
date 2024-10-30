@@ -7,11 +7,11 @@ export default function InputGeneral(props) {
 
     return (
         <>
-            <div class="input-group mb-4">
-                <span class={`iconLabel input-group-text ${isFocused ? 'focused' : ''}`}>{props.iconLabel}</span>
+            <div className="input-group mb-4">
+                <span className={`iconLabel input-group-text ${isFocused ? 'focused' : ''}`}>{props.iconLabel}</span>
                 
-                <div class="form-floating">    
-                    <select class="selectCustom form-select" id={props.idSelect} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} required={props.isRequired}>
+                <div className="form-floating">    
+                    <select className="selectCustom form-select" id={props.idSelect} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} required={props.isRequired}>
                         <option value="update">Alteração da parceria</option>
                         <option value="delete">Encerramento da parceria</option>
                     </select>

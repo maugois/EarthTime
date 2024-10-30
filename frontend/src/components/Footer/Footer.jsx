@@ -14,7 +14,7 @@ export default function Footer() {
                             Logo
                         </Link>
 
-                        <p className='text-center mt-5 fs-2 fst-italic fw-light customLineText'>Cuidar do planeta é cuidar de nós.</p>
+                        <p className='text-center mt-5 fs-1 fst-italic fw-light customLineText'>Cuidar do planeta é cuidar de nós</p>
                     </div>
 
                     <div id='footer-links' className='d-flex justify-content-around flex-wrap'>

@@ -1,0 +1,58 @@
+.lineTitleBgGreen {
+    border: 1px solid #033014;          
+    height: 4px;          
+    background-color: #033014;  
+    width: 20%;            
+    margin: 20px auto;
+    opacity: 1;
+}
+
+.lineTitleBgDark {
+    border: 1px solid #0edb5d;          
+    height: 4px;          
+    background-color: #0edb5d;
+    width: 15%;            
+    margin: 20px auto;
+    opacity: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #containerCompanies {
+        flex-direction: column;
+    }
+
+    #sectionCompanies {
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    #sectionImages {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #containerCompanies {
+        flex-direction: column;
+    }
+
+    #sectionCompanies {
+        width: 100% !important;
+    }
+
+    #sectionCompanies div {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #sectionImages {
+        width: 100% !important;
+        margin-top: 2rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #sectionImages div {
+        width: 100% !important;
+    }
+}

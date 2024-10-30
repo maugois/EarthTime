@@ -22,10 +22,10 @@ export default function FormPartnerships() {
                 <InputUpload idUpload='image' isRequired='required' />
                 <TextareaGeneral idTextarea='description' iconLabel={ <FontAwesomeIcon icon={faFont} /> } placeholder='Descrição' isRequired='required' />
                 
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="termsCheck" required/>
-                        <label class="form-check-label text-white" for="termsCheck">
+                <div className="col-12">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" id="termsCheck" required/>
+                        <label className="form-check-label text-white" htmlFor="termsCheck">
                             Li e concordo com os&nbsp; 
                         </label>
                         <span className="fw-bold cursor-pointer" data-bs-toggle="modal" data-bs-target="#termsModal">termos.</span>
