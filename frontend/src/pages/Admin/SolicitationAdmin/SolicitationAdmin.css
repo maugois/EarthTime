@@ -1,0 +1,10 @@
+.sectionAdminSolicitation {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 2;
+}

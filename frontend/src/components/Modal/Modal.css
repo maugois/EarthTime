@@ -1,0 +1,7 @@
+.modalCustom {
+    background-color: #065425;
+}
+
+.customClose .btn-close {
+    filter: invert(1); /* Muda a cor para branco */
+}

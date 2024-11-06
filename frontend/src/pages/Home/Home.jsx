@@ -131,7 +131,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <ModalLarge idModal="modalLargeCompanies" titleModal="Empresas"> 
+                <ModalLarge idModal="modalLargeCompanies" titleModal="Empresas" Buttons={<button type="button" className="btn btn-danger" data-bs-dismiss="modal">Fechar</button>}> 
                     <div className='row text-white m-auto'>
                         <div className={isMobile ? 'col-12' : 'col-7'}>
                             <span className="badge rounded-pill bg-danger py-2 px-4 mb-4 mt-2 text-uppercase">{selectedArticle.branch}</span>
@@ -147,7 +147,7 @@ export default function Home() {
                     </div>
                 </ModalLarge>
 
-                <ModalLarge idModal="modalLargeNews" titleModal="Notícias"> 
+                <ModalLarge idModal="modalLargeNews" titleModal="Notícias" Buttons={<button type="button" className="btn btn-danger" data-bs-dismiss="modal">Fechar</button>}> 
                     <div className='row text-white m-auto'>
                         <div className={isMobile ? 'col-12' : 'col-7'}>
                             <span className="badge rounded-pill bg-danger py-2 px-4 mb-4 mt-2 text-uppercase">Atenção</span>

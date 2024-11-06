@@ -1,0 +1,9 @@
+.sectionAdminHome {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 8rem;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 2;
+}

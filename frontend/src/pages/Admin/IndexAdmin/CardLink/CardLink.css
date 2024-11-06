@@ -1,0 +1,32 @@
+.card-icon {
+    position: absolute;
+    top: -10px;
+    right: -65px;
+    font-size: 190px;
+    overflow: hidden;
+    opacity: 0.3;
+}
+
+.card-link .icon-link {
+    transition: all ease 0.4s;
+
+}
+
+.card-link span {
+    transition: all ease 0.4s;
+
+}
+
+.card-link:hover .icon-link {
+    transform: scale(1.4);
+}
+
+.card-link:hover span {
+    transform: scale(1.1);
+}
+
+/* Texto dos cards */
+.card-texts {
+    color: #fff;
+    opacity: 0.9 !important;
+}

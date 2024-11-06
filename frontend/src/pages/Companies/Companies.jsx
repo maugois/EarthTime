@@ -7,8 +7,8 @@ import Waves from '../../components/Waves/Waves.jsx'
 import ModalLarge from '../../components/ModalLarge/ModalLarge.jsx'
 import image from '../../assets/images/imagePlanet.jfif'
 import imageTwo from '../../assets/images/natureImage.jfif'
-import './Companies.css'
 import PaginationCompanies from './PaginationCompanies/PaginationCompanies.jsx';
+import './Companies.css'
 
 export default function Companies() {
     const [selectedArticle, setSelectedArticle] = useState({});
@@ -90,7 +90,7 @@ export default function Companies() {
                     <PaginationCompanies handleOpenModal={handleOpenModal} />
                 </div>
 
-                <ModalLarge idModal="modalLargeCompanies" titleModal="Empresas"> 
+                <ModalLarge idModal="modalLargeCompanies" titleModal="Empresas" Buttons={<button type="button" className="btn btn-danger" data-bs-dismiss="modal">Fechar</button>}> 
                     <div className='row text-white m-auto'>
                         <div className={isMobile ? 'col-12' : 'col-7'}>
                             <span className="badge rounded-pill bg-danger py-2 px-4 mb-4 mt-2 text-uppercase">{selectedArticle.branch}</span>

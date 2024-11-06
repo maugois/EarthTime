@@ -29,7 +29,7 @@ export default function InputUpload(props) {
                             <span className="fw-light">Imagem</span>
                         </>
                     ) : (
-                        <span className="fw-light">{fileName}</span> // Exibe o nome do arquivo
+                        <span className="fw-light">{fileName ? fileName : props.value}</span> // Exibe o nome do arquivo
                     )}
                 </label>
 

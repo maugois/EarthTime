@@ -1,0 +1,9 @@
+@import 'datatables.net-dt';
+
+.dataTableCustom {
+    text-align: center !important;
+}
+
+.dataTableCustom td {
+    text-align: center !important;
+}
