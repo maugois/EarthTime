@@ -16,13 +16,13 @@ export default function HeaderAdmin() {
         <header>
             <nav className="navbar bartop shadow-sm fixed-top">
                 <div className="container-fluid">
-                    <p className="navbar-brand text-white text-end m-0 p-0"> Earth Time</p>
+                    <p className="navbar-brand text-white text-end m-0 p-0"> Earth Timer</p>
                 </div>
             </nav>
 
             <div className={`sidebar shadow ${isOpen ? 'open' : ''}`}>
                 <div className="logo-details">
-                    <img src="zzzz" className="logo_name w-75" alt="Logo Earth Time" />
+                    <img src="zzzz" className="logo_name w-75" alt="Logo Earth Timer" />
                     <div className="iconHeaderAdmin" id='btn' onClick={toggleSidebar}>
                         <FontAwesomeIcon icon={isOpen ? faBarsStaggered : faBars} />
                     </div>

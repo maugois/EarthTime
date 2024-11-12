@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import "./InputSelect.css";
 
-export default function InputGeneral(props) {
+export default function InputGeneral({ children, ...props}) {
     const [isFocused, setIsFocused] = useState(false);
 
     return (
@@ -11,12 +11,11 @@ export default function InputGeneral(props) {
                 <span className={`iconLabel input-group-text ${isFocused ? 'focused' : ''}`}>{props.iconLabel}</span>
                 
                 <div className="form-floating">    
-                    <select className="selectCustom form-select" id={props.idSelect} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} required={props.isRequired}>
-                        <option value="update">Alteração da parceria</option>
-                        <option value="delete">Encerramento da parceria</option>
+                    <select className="selectCustom form-select" id={props.idSelect} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} required={props.isRequired} onChange={props.onChange}>
+                        {children}
                     </select>
                     
-                    <label className="labelCustom" for={props.idSelect}>{props.placeholder}</label>
+                    <label className="labelCustom" htmlFor={props.idSelect}>{props.placeholder}</label>
                 </div>
             </div>
         </>

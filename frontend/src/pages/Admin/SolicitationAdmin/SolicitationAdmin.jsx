@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactDOMServer from 'react-dom/server';
 import Admin from "../../../layouts/Admin.jsx";
 import fetchCompanies from '../../../services/api/representativeData.jsx';
@@ -7,6 +7,7 @@ import CardAdmin from "../../../components/CardAdmin/CardAdmin.jsx";
 import DataTable from "../../../components/DataTable/DataTable.jsx";
 import ModalLarge from "../../../components/ModalLarge/ModalLarge.jsx";
 import InputGeneral from "../../../components/InputGeneral/InputGeneral.jsx";
+import LabelTitle from "../../../components/LabelTitle/LabelTitle.jsx";
 import InputUpload from "../../../components/InputUpload/InputUpload.jsx";
 import TextareaGeneral from "../../../components/TextareaGeneral/TextareaGeneral.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,9 +18,36 @@ export default function SolicitationAdmin() {
     const { articles } = fetchCompanies();
     const [statusFilter, setStatusFilter] = useState("1");
     const [selectedArticle, setSelectedArticle] = useState({});
+
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        isAtTop: window.scrollY === 0,
+    });
+
+    useEffect(() => {
+        const handleResizeAndScroll = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+                isAtTop: window.scrollY === 0,
+            });
+        };
+    
+        // Adiciona event listeners para 'resize' e 'scroll'
+        window.addEventListener('resize', handleResizeAndScroll);
+        window.addEventListener('scroll', handleResizeAndScroll);
+
+        // Remove os event listeners ao desmontar o componente
+        return () => {
+            window.removeEventListener('resize', handleResizeAndScroll);
+            window.removeEventListener('scroll', handleResizeAndScroll);
+        };
+    }, []);
+    
+    const isMobile = windowSize.width <= 990;
    
     const handleOpenModal = (article) => {
-        console.log(article);
         setSelectedArticle(article);
     };
 
@@ -31,28 +59,56 @@ export default function SolicitationAdmin() {
         return true;
     });
 
-    const dataTable = filteredArticles.map((article) => [
-        article.id,
-        article.title,
-        article.branch,
-        ReactDOMServer.renderToString(
-            <a href={article.urlCompany} target="_blank" rel="noopener noreferrer" className="text-decoration-none">{article.urlCompany}</a>
-        ),
-        ReactDOMServer.renderToString(
+    const columns = [
+        {
+            name: 'ID',
+            selector: row => row.id,
+            sortable: true,
+            width: '100px'
+        },
+        {
+            name: 'Nome',
+            selector: row => row.title,
+            sortable: true,
+        },
+        {
+            name: 'Setor',
+            selector: row => row.branch,
+            sortable: true,
+        },
+        {
+            name: 'Status',
+            selector: row => row.status,
+            sortable: true,
+            width: '200px'
+        },
+        {
+            name: 'Opções',
+            selector: row => row.button,
+            width: '300px'
+        },
+    ];
+
+    const dataTable = filteredArticles.map((article) => ({
+        id: article.id,
+        title: article.title,
+        branch: article.branch,
+        status: (
             <span className={`badge opacity-75 px-4 py-2 ${article.status === "Aceito" ? "bg-success" : article.status === "Pendente" ? "bg-warning" : "bg-danger"}`}>
                 {article.status}
             </span>
         ),
-        ReactDOMServer.renderToString(
-            <button 
-                className="btn btn-success" 
-                data-bs-toggle="modal" 
-                data-bs-target="#modalLargeSolicitationAdmin" 
-                onClick={() => handleOpenModal(article)}>
+        button: (
+            <button
+                className="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#modalLargeSolicitationAdmin"
+                onClick={() => handleOpenModal(article)}
+            >
                 Visualizar
             </button>
-        )
-    ]);
+        ),
+    }));
 
     return (
         <Admin>
@@ -74,14 +130,7 @@ export default function SolicitationAdmin() {
                 </div>
 
                 <div className="table-responsive mx-5 p-4 bg-body rounded shadow-lg">
-                    <DataTable idTable="tableSolicitation" dataTable={dataTable}>
-                        <th className="text-center">Id</th>
-                        <th className="text-center">Nome</th>
-                        <th className="text-center">Setor</th>
-                        <th className="text-center">Website</th>
-                        <th className="text-center">Status</th>
-                        <th className="text-center">Opções</th>
-                    </DataTable>
+                    <DataTable idTable="tableSolicitation" dataTable={dataTable} columns={columns} />
                 </div>
             </div>
 
@@ -94,22 +143,22 @@ export default function SolicitationAdmin() {
                 }
             > 
                 <div className='row text-white m-auto'>
-                    <div className='col-6'>
-                        <form action="">
-                            <InputGeneral typeInput='text' idInput='name' iconLabel={ <FontAwesomeIcon icon={faUser} /> } placeholder='Nome' isRequired='required' value={selectedArticle.title}/>
-                            <InputGeneral typeInput='email' idInput='email' iconLabel={ <FontAwesomeIcon icon={faEnvelope} /> } placeholder='E-mail' isRequired='required' value={selectedArticle.email}/>
-                            <InputGeneral typeInput='text' idInput='phone' maskInput='(99) 99999-9999' iconLabel={ <FontAwesomeIcon icon={faPhone} /> } placeholder='Telefone' isRequired='required' value={selectedArticle.phone}/>
-                            <InputGeneral typeInput='text' idInput='cnpj' maskInput='99.999.999/9999-99' iconLabel={ <FontAwesomeIcon icon={faFile} /> } placeholder='CNPJ' isRequired='required' value={selectedArticle.cnpj}/>
-                            <InputGeneral typeInput='text' idInput='cep' maskInput='99999-999' iconLabel={ <FontAwesomeIcon icon={faLocationDot} /> } placeholder='CEP' isRequired='required' value={selectedArticle.cep}/>
-                            <InputGeneral typeInput='text' idInput='sector' iconLabel={ <FontAwesomeIcon icon={faBriefcase} /> } placeholder='Setor' isRequired='required' value={selectedArticle.branch}/>
-                        </form>
+                    <div className={isMobile ? 'col-12' : 'col-7'}>
+                        <span className="badge rounded-pill bg-danger py-2 px-4 mb-4 mt-2 text-uppercase">{selectedArticle.branch}</span>
+                        <h2>{selectedArticle.title}</h2>
+                        <p className='my-4 opacity-75'>{selectedArticle.description}</p>
+                        <ul className="list-group list-group-flush listGroupCustom rounded w-50">
+                            <li className="list-group-item"><FontAwesomeIcon icon={faEnvelope} /> {selectedArticle.email}</li>
+                            <li className="list-group-item"><FontAwesomeIcon icon={faPhone} /> {selectedArticle.phone}</li>
+                            <li className="list-group-item"><FontAwesomeIcon icon={faFile} /> {selectedArticle.cnpj}</li>
+                            <li className="list-group-item"><FontAwesomeIcon icon={faLocationDot} /> {selectedArticle.cep}</li>
+                        </ul>
+                        <p className='my-3'>
+                            Link: <a href={selectedArticle.urlCompany} target="_blank" className='link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover'>{selectedArticle.urlCompany}</a>
+                        </p>
                     </div>
-                    <div className='col-6'>
-                        <form action="">
-                            <InputGeneral typeInput='text' idInput='site' iconLabel={ <FontAwesomeIcon icon={faLink} /> } placeholder='Website' isRequired='required' value={selectedArticle.urlCompany}/>
-                            <InputUpload idUpload='image' isRequired='required' />
-                            <TextareaGeneral idTextarea='description' iconLabel={ <FontAwesomeIcon icon={faFont} /> } placeholder='Descrição' isRequired='required' height='274px' value={selectedArticle.description} />
-                        </form>
+                    <div className={isMobile ? 'col-12' : 'col-5'} style={{ height: '525px' }}>
+                        <img src={selectedArticle.imageUrl} className="img-fluid rounded object-fit-cover h-100 w-100" alt={selectedArticle.title} />
                     </div>
                 </div>
             </ModalLarge>

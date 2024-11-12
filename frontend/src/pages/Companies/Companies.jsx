@@ -100,7 +100,7 @@ export default function Companies() {
                                 Link: <a href={selectedArticle.urlCompany} target="_blank" className='link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover'>{selectedArticle.urlCompany}</a>
                             </p>
                         </div>
-                        <div className={isMobile ? 'col-12' : 'col-5'}>
+                        <div className={isMobile ? 'col-12' : 'col-5'} style={{ height: '400px' }}>
                             <img src={selectedArticle.imageUrl} className="img-fluid rounded object-fit-cover h-100 w-100" alt={selectedArticle.title} />
                         </div>
                     </div>

@@ -20,7 +20,7 @@ export default function InputGeneral(props) {
                         onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} 
                         required={props.isRequired} 
                         value={props.value}
-                        readonly 
+                        onChange={props.onChange}
                         />
                     <label className="labelCustom" htmlFor={props.idInput}>{props.placeholder}</label>
                 </div>

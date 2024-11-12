@@ -1,9 +1,7 @@
-@import 'datatables.net-dt';
-
-.dataTableCustom {
+.rdt_Table {
     text-align: center !important;
 }
 
-.dataTableCustom td {
+.rdt_Table td {
     text-align: center !important;
 }

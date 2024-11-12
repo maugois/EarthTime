@@ -26,7 +26,6 @@ export default function SliderCardVerticalNews( { handleOpenModal } ) {
     };
 
     const { articles, loading } = fetchNews();
-    console.log(articles);
 
     const maxLength = 150;
 

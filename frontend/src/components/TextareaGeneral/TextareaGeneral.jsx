@@ -18,7 +18,7 @@ export default function TextareaGeneral(props) {
                         style={{ height: props.height ? props.height : '200px' }} 
                         required={props.isRequired}
                         value={props.value}
-                        readonly
+                        readOnly
                         ></textarea>
                     <label className="labelCustom" htmlFor={props.idTextarea}>{props.placeholder}</label>
                 </div>

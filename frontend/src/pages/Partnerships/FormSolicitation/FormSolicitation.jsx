@@ -9,7 +9,14 @@ export default function FormSolicitation() {
     return (
         <>
             <form action="">
-                <InputSelect idSelect='typeSolicitation' iconLabel={ <FontAwesomeIcon icon={faList} /> } placeholder='Informa o tipo de solicitação' isRequired='required'/>
+                <InputSelect 
+                    idSelect='typeSolicitation' 
+                    iconLabel={ <FontAwesomeIcon icon={faList} /> } 
+                    placeholder='Informa o tipo de solicitação' 
+                    isRequired='required'> 
+                        <option value="Alteração">Alteração da parceria</option>
+                        <option value="Encerramento">Encerramento da parceria</option>
+                    </InputSelect>
                 <TextareaGeneral idTextarea='description' iconLabel={ <FontAwesomeIcon icon={faFont} /> } placeholder='Informe a alteração que deve ser feita ou o motivo do encerramento da parceria' isRequired='required' />
 
                 <div className="d-grid gap-2 col-6 ms-auto">

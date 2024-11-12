@@ -8,3 +8,8 @@
     width: calc(100% - 78px);
     z-index: 2;
 }
+
+.listGroupCustom .list-group-item {
+    background-color: transparent !important;
+    color: #fff !important;
+}
