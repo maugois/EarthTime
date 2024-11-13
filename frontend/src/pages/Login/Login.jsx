@@ -1,6 +1,7 @@
 import React from 'react'
 import Public from '../../layouts/Public.jsx'
 import { Link } from "react-router-dom";
+import logo from '../../assets/images/logoEarthTime.svg';
 import InputGeneral from '../../components/InputGeneral/InputGeneral.jsx'
 import BtnGeneral from '../../components/btnGeneral/BtnGeneral.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,13 +17,13 @@ export default function Login() {
                         <div className='cardMobile firstColumn w-50 h-100 d-flex flex-column justify-content-center align-items-center'>
                             <h1 className='mb-5 fst-italic fw-light'>Seja bem-vindo</h1>
 
-                            <div className='mt-4 mb-4'>
-                                <Link to={"/"} className='nav-link  mt-4' id='logo'>
-                                    Logo
+                            <div className='mb-5'>
+                                <Link to={"/"} className='nav-link  mt-4 logoLogin'>
+                                    <img src={logo} className='w-100' alt="Logo EarthTime" />
                                 </Link>
                             </div>
 
-                            <p className='mb-5 fs-5 opacity-75 w-50 text-center'>Caso não tenha uma conta, solicita uma para o administrador!</p>
+                            <p className='mt-5 fs-5 opacity-75 w-75 text-center'>Caso não tenha uma conta, solicita uma para o administrador!</p>
                         </div>
                         <div className='cardMobile secondColumn w-50 h-100 d-flex flex-column justify-content-center align-items-center'>
                             <h1 className='mb-5 fst-italic fw-light'>Faça seu login</h1>
@@ -34,7 +35,9 @@ export default function Login() {
                                 <InputGeneral typeInput='password' idInput='password' iconLabel={ <FontAwesomeIcon icon={faKey} /> } placeholder='Senha' isRequired='required' />
 
                                 <div className='d-grid gap-2 col-6 mx-auto'>
-                                    <BtnGeneral children={'Entrar'} color={'#2bac3e'} textColor={'white'}/>
+                                    <Link to={'/homeAdmin'}>
+                                        <BtnGeneral children={'Entrar'} color={'#2bac3e'} textColor={'white'}/>
+                                    </Link>
                                 </div>
                             </form>
                         </div>

@@ -1,3 +1,15 @@
+.logoLogin {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+}
+
+.logoLogin img {
+    width: 100%;
+}
+
 .firstColumn {
     background-color: #25502A;
     border-top-left-radius: 0.5rem;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
+import logo from '../../assets/images/logoEarthTime.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faBarsStaggered, faArrowRightFromBracket, faHouse, faUser, faBriefcase, faFile } from '@fortawesome/free-solid-svg-icons';
 import './HeaderAdmin.css';
@@ -22,7 +23,7 @@ export default function HeaderAdmin() {
 
             <div className={`sidebar shadow ${isOpen ? 'open' : ''}`}>
                 <div className="logo-details">
-                    <img src="zzzz" className="logo_name w-75" alt="Logo Earth Timer" />
+                    <img src={logo} className='w-100' alt="Logo EarthTime" style={{ display: isOpen ? 'block' : 'none' }} />
                     <div className="iconHeaderAdmin" id='btn' onClick={toggleSidebar}>
                         <FontAwesomeIcon icon={isOpen ? faBarsStaggered : faBars} />
                     </div>

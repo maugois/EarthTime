@@ -10,8 +10,8 @@
     transition: all 0.2s;
 }
 
-#logo {
-    display: flex;
+.logo {
+    display: flex !important;
     justify-content: center;
     align-items: center;
     width: 237px;
@@ -20,6 +20,10 @@
     font-size: 20px;
     margin: 0px;
     color: #FFFFFF;
+}
+
+.logo img {
+    height: 200px;
 }
 
 #btnPartnership {

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import OffCanvas from '../OffCanvas/OffCanvas.jsx';
-import logo from '../../assets/images/logoEarthTime1.svg';
+import logo from '../../assets/images/logoEarthTime.svg';
 import './Header.css';
   
 export default function Header() {
@@ -42,8 +42,8 @@ export default function Header() {
             <header className='fixed-top'>
                 <nav id={isTop ? 'headerContainerTop' : 'headerContainerFixed'} className="navbar shadow rounded-bottom-4">
                     <div className="container">
-                        <Link to={"/"} className='nav-link navbar-brand' id='logo'>
-                            <img src={logo} className='w-100' alt="" />
+                        <Link to={"/"} className='nav-link navbar-brand logo'>
+                            <img src={logo} className='w-100' alt="Logo EarthTime" />
                         </Link>
 
                         {isMobile && ( // Se for mobile, mostrar o OffCanvas

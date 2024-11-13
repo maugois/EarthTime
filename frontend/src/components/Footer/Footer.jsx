@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import logo from '../../assets/images/logoEarthTime.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
@@ -10,8 +11,8 @@ export default function Footer() {
             <footer id='footer-container'>
                 <div className='container text-white p-4'>
                     <div id='footer-info' className='d-flex flex-column align-items-center justify-content-center'>
-                        <Link to={"/"} className='nav-link  mt-4' id='logo'>
-                            Logo
+                        <Link to={"/"} className='nav-link  mt-4 logo'>
+                            <img src={logo} className='w-100' alt="Logo EarthTime" />
                         </Link>
 
                         <p className='text-center mt-5 fs-1 fst-italic fw-light customLineText'>Cuidar do planeta é cuidar de nós</p>
